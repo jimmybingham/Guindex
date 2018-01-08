@@ -154,8 +154,8 @@ var markPubs = function (pubs, pints, guindexMap)
 
         var info_window = new google.maps.InfoWindow();
 
-        google.maps.event.addListener(marker, 'mouseover', (function (marker, content, info_window) {
-
+        //google.maps.event.addListener(marker, 'mouseover', (function (marker, content, info_window) {
+        google.maps.event.addListener(marker, 'click', (function (marker, content, info_window) {
             return function() {
                 info_window.setContent(content);
                 info_window.open(guindexMap, marker);
@@ -164,12 +164,12 @@ var markPubs = function (pubs, pints, guindexMap)
         }) (marker, content, info_window));
 
         // assuming you also want to hide the info_window when user mouses-out
-        google.maps.event.addListener(marker, 'mouseout', (function (marker, content, info_window) {
+        //google.maps.event.addListener(marker, 'mouseout', (function (marker, content, info_window) {
 
-            return function() {
-                info_window.close();
-            };
+          //  return function() {
+          //    info_window.close();
+          //  };
 
-        }) (marker, content, info_window));
+        //}) (marker, content, info_window));
     }
 }
